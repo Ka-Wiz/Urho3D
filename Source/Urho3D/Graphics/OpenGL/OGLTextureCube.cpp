@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2008-2018 the Urho3D project.
+// Copyright (c) 2008-2019 the Urho3D project.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -195,7 +195,7 @@ bool TextureCube::SetData(CubeMapFace face, Image* image, bool useAlpha)
     // Use a shared ptr for managing the temporary mip images created during this function
     SharedPtr<Image> mipImage;
     unsigned memoryUse = 0;
-    int quality = QUALITY_HIGH;
+    MaterialQuality quality = QUALITY_HIGH;
     auto* renderer = GetSubsystem<Renderer>();
     if (renderer)
         quality = renderer->GetTextureQuality();

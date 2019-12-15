@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2008-2018 the Urho3D project.
+// Copyright (c) 2008-2019 the Urho3D project.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,8 +20,11 @@
 // THE SOFTWARE.
 //
 
+/// \file
+
 #pragma once
 
+#include "../Input/InputConstants.h"
 #include "../UI/ScrollView.h"
 
 namespace Urho3D
@@ -52,7 +55,7 @@ public:
     static void RegisterObject(Context* context);
 
     /// React to a key press.
-    void OnKey(int key, int buttons, int qualifiers) override;
+    void OnKey(Key key, MouseButtonFlags buttons, QualifierFlags qualifiers) override;
     /// React to resize.
     void OnResize(const IntVector2& newSize, const IntVector2& delta) override;
 
@@ -129,7 +132,7 @@ public:
     UIElement* GetSelectedItem() const;
     /// Return all selected items.
     PODVector<UIElement*> GetSelectedItems() const;
-    /// Return whether an item at index is seleccted.
+    /// Return whether an item at index is selected.
     bool IsSelected(unsigned index) const;
     /// Return whether an item at index has its children expanded (in hierarchy mode only).
     bool IsExpanded(unsigned index) const;

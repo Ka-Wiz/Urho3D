@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2008-2018 the Urho3D project.
+// Copyright (c) 2008-2019 the Urho3D project.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -346,9 +346,10 @@ void* Graphics::ReserveScratchBuffer(unsigned size)
     newBuffer.size_ = size;
     newBuffer.reserved_ = true;
     scratchBuffers_.Push(newBuffer);
-    return newBuffer.data_.Get();
 
     URHO3D_LOGDEBUG("Allocated scratch buffer with size " + String(size));
+
+    return newBuffer.data_.Get();
 }
 
 void Graphics::FreeScratchBuffer(void* buffer)

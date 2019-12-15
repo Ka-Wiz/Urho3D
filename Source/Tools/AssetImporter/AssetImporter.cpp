@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2008-2018 the Urho3D project.
+// Copyright (c) 2008-2019 the Urho3D project.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -1368,7 +1368,7 @@ void BuildAndSaveAnimations(OutModel* model)
             AnimationTrack* track = outAnim->CreateTrack(channelName);
 
             // Check which channels are used
-            track->channelMask_ = 0;
+            track->channelMask_ = CHANNEL_NONE;
             if (channel->mNumPositionKeys > 1 || !posEqual)
                 track->channelMask_ |= CHANNEL_POSITION;
             if (channel->mNumRotationKeys > 1 || !rotEqual)

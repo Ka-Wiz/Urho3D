@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2008-2018 the Urho3D project.
+// Copyright (c) 2008-2019 the Urho3D project.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -93,7 +93,7 @@ void VertexBuffer::UpdateOffsets()
 {
     unsigned elementOffset = 0;
     elementHash_ = 0;
-    elementMask_ = 0;
+    elementMask_ = MASK_NONE;
 
     for (PODVector<VertexElement>::Iterator i = elements_.Begin(); i != elements_.End(); ++i)
     {
@@ -106,7 +106,7 @@ void VertexBuffer::UpdateOffsets()
         {
             const VertexElement& legacy = LEGACY_VERTEXELEMENTS[j];
             if (i->type_ == legacy.type_ && i->semantic_ == legacy.semantic_ && i->index_ == legacy.index_)
-                elementMask_ |= (1u << j);
+                elementMask_ |= VertexMaskFlags(1u << j);
         }
     }
 

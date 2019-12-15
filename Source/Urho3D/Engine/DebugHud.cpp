@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2008-2018 the Urho3D project.
+// Copyright (c) 2008-2019 the Urho3D project.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -166,7 +166,7 @@ void DebugHud::Update()
         String mode;
         mode.AppendWithFormat("Tex:%s Mat:%s Spec:%s Shadows:%s Size:%i Quality:%s Occlusion:%s Instancing:%s API:%s",
             qualityTexts[renderer->GetTextureQuality()],
-            qualityTexts[Min(renderer->GetMaterialQuality(), 3)],
+            qualityTexts[Min((unsigned)renderer->GetMaterialQuality(), 3)],
             renderer->GetSpecularLighting() ? "On" : "Off",
             renderer->GetDrawShadows() ? "On" : "Off",
             renderer->GetShadowMapSize(),

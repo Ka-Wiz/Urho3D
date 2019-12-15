@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2008-2018 the Urho3D project.
+// Copyright (c) 2008-2019 the Urho3D project.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -19,6 +19,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 //
+
+/// \file
 
 #pragma once
 
@@ -161,7 +163,7 @@ struct URHO3D_API RenderPathCommand
     /// Depth-stencil output name.
     String depthStencilName_;
     /// Clear flags. Affects clear command only.
-    unsigned clearFlags_{};
+    ClearTargetFlags clearFlags_{};
     /// Clear color. Affects clear command only.
     Color clearColor_;
     /// Clear depth. Affects clear command only.

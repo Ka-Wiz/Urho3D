@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2008-2018 the Urho3D project.
+// Copyright (c) 2008-2019 the Urho3D project.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -19,6 +19,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 //
+
+/// \file
 
 #pragma once
 
@@ -201,9 +203,9 @@ public:
     /// Set default texture filtering.
     void SetTextureFilterMode(TextureFilterMode mode);
     /// Set texture quality level. See the QUALITY constants in GraphicsDefs.h.
-    void SetTextureQuality(int quality);
+    void SetTextureQuality(MaterialQuality quality);
     /// Set material quality level. See the QUALITY constants in GraphicsDefs.h.
-    void SetMaterialQuality(int quality);
+    void SetMaterialQuality(MaterialQuality quality);
     /// Set shadows on/off.
     void SetDrawShadows(bool enable);
     /// Set shadow map resolution.
@@ -278,10 +280,10 @@ public:
     TextureFilterMode GetTextureFilterMode() const { return textureFilterMode_; }
 
     /// Return texture quality level.
-    int GetTextureQuality() const { return textureQuality_; }
+    MaterialQuality GetTextureQuality() const { return textureQuality_; }
 
     /// Return material quality level.
-    int GetMaterialQuality() const { return materialQuality_; }
+    MaterialQuality GetMaterialQuality() const { return materialQuality_; }
 
     /// Return shadow map resolution.
     int GetShadowMapSize() const { return shadowMapSize_; }
@@ -537,9 +539,9 @@ private:
     /// Texture filtering mode.
     TextureFilterMode textureFilterMode_{FILTER_TRILINEAR};
     /// Texture quality level.
-    int textureQuality_{QUALITY_HIGH};
+    MaterialQuality textureQuality_{QUALITY_HIGH};
     /// Material quality level.
-    int materialQuality_{QUALITY_HIGH};
+    MaterialQuality materialQuality_{QUALITY_HIGH};
     /// Shadow map resolution.
     int shadowMapSize_{1024};
     /// Shadow quality.

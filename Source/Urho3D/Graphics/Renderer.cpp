@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2008-2018 the Urho3D project.
+// Copyright (c) 2008-2019 the Urho3D project.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -328,7 +328,7 @@ void Renderer::SetTextureFilterMode(TextureFilterMode mode)
     textureFilterMode_ = mode;
 }
 
-void Renderer::SetTextureQuality(int quality)
+void Renderer::SetTextureQuality(MaterialQuality quality)
 {
     quality = Clamp(quality, QUALITY_LOW, QUALITY_HIGH);
 
@@ -339,7 +339,7 @@ void Renderer::SetTextureQuality(int quality)
     }
 }
 
-void Renderer::SetMaterialQuality(int quality)
+void Renderer::SetMaterialQuality(MaterialQuality quality)
 {
     quality = Clamp(quality, QUALITY_LOW, QUALITY_MAX);
 
@@ -1941,7 +1941,7 @@ String Renderer::GetShadowVariations() const
             return "VSM_SHADOW ";
     }
     return "";
-};
+}
 
 void Renderer::HandleScreenMode(StringHash eventType, VariantMap& eventData)
 {
